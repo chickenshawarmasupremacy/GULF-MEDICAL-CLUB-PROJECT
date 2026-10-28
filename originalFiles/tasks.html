@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasks · Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html">Anchor</a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="tasks.html" aria-current="page">Tasks</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="reader.html">Reader</a></li>
+      <li><a href="relax.html">Relax</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<h1>Break a task down</h1>
+<p>Add a task, split it into small steps, then give a step some time.</p>
+<div class="grid">
+  <section class="panel" aria-labelledby="t-h">
+    <h2 id="t-h">Your steps</h2>
+    <div class="row" role="group" aria-label="Add a step">
+      <div style="flex:1 1 200px"><label for="new-step">New step</label><input type="text" id="new-step" placeholder="e.g. Open the document"></div>
+      <button type="button" class="primary" id="add-step">Add step</button>
+    </div>
+    <ul class="task-list" id="step-list" aria-live="polite">
+      <li><input type="checkbox" id="s1" aria-labelledby="s1l"><span id="s1l">Example step: gather what you need</span><button type="button" aria-label="Remove step">✕</button></li>
+      <li><input type="checkbox" id="s2" aria-labelledby="s2l"><span id="s2l">Example step: do the first small part</span><button type="button" aria-label="Remove step">✕</button></li>
+    </ul>
+    <button type="button" id="split-task" style="margin-top:1rem">Split a big task for me</button>
+  </section>
+  <section class="panel" aria-labelledby="tm-h">
+    <h2 id="tm-h">Time for this step</h2>
+    <div class="timer" role="timer" aria-label="Time remaining">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="90"/><circle class="fill" id="timer-ring" cx="100" cy="100" r="90"/></svg>
+      <span class="readout" id="timer-readout">10:00</span>
+    </div>
+    <div class="row" style="margin-top:1rem;justify-content:center">
+      <label for="minutes" class="sr-only">Minutes</label>
+      <input type="number" id="minutes" value="10" min="1" max="120" style="width:6rem">
+      <button type="button" class="primary" id="timer-start">Start</button>
+      <button type="button" id="timer-pause">Pause</button>
+      <button type="button" id="timer-reset">Reset</button>
+    </div>
+    <p class="buffer panel" style="margin-top:1rem;padding:.8rem 1rem"><label for="buffer-on" style="display:inline"><input type="checkbox" id="buffer-on"> Add a 5 minute buffer after this step</label></p>
+  </section>
+</div>
+</main>
+<!-- <script type="module" src="js/tasks.js"></script> -->
+</body>
+</html>
