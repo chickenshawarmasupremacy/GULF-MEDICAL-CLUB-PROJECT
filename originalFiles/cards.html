@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cards · Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html">Anchor</a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="cards.html" aria-current="page">Cards</a></li>
+      <li><a href="reader.html">Reader</a></li>
+      <li><a href="relax.html">Relax</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<h1>Show a card</h1>
+<p>Tap a card to show it full screen. Tap again to close it.</p>
+<section aria-labelledby="c-h">
+  <h2 id="c-h">Your cards</h2>
+  <div class="card-grid" id="card-grid">
+    <button type="button" class="talk-card" data-tone="stop">I do not feel ready to talk to anyone yet.</button>
+    <button type="button" class="talk-card" data-tone="stop">I need quiet right now.</button>
+    <button type="button" class="talk-card" data-tone="need">I need some space. Please stay nearby.</button>
+    <button type="button" class="talk-card" data-tone="need">Please give me a few minutes.</button>
+    <button type="button" class="talk-card" data-tone="need">I can hear you, but I can't answer yet.</button>
+    <button type="button" class="talk-card" data-tone="ok">Please text or write to me instead.</button>
+    <button type="button" class="talk-card" data-tone="ok">I'm okay. I just need a moment.</button>
+    <button type="button" class="talk-card" data-tone="need">I need help. Please stay with me.</button>
+  </div>
+</section>
+<section class="panel" aria-labelledby="n-h">
+  <h2 id="n-h">Make your own card</h2>
+  <label for="custom-text">What should it say?</label>
+  <textarea id="custom-text" rows="3"></textarea>
+  <div class="row" style="margin-top:1rem">
+    <label for="custom-tone" class="sr-only">Card colour</label>
+    <select id="custom-tone" style="width:auto"><option value="ok">Okay</option><option value="need">Need</option><option value="stop">Stop</option></select>
+    <button type="button" class="primary" id="save-card">Save card</button>
+  </div>
+</section>
+<div class="show-card" id="show-card" role="dialog" aria-modal="true" aria-label="Card" data-open="false"><span id="show-card-text"></span></div>
+</main>
+<!-- <script type="module" src="js/cards.js"></script> -->
+</body>
+</html>

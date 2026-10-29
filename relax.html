@@ -39,16 +39,19 @@
   </div>
 </section>
 <section class="panel" aria-labelledby="s-h" style="margin-top:var(--gap)">
-  <h2 id="s-h">Sounds</h2>
+  <h2 id="s-h">Touch and sound</h2>
+  <p>Pick a material, then press and drag on the surface. You can also use the buttons below it.</p>
   <div class="sound-grid">
-    <button type="button" class="sound" aria-pressed="false" data-sound="slime"><span class="ico" aria-hidden="true">🫧</span>Slime</button>
+    <button type="button" class="sound" aria-pressed="true" data-sound="slime"><span class="ico" aria-hidden="true">🫧</span>Slime</button>
     <button type="button" class="sound" aria-pressed="false" data-sound="putty"><span class="ico" aria-hidden="true">🫳</span>Putty</button>
     <button type="button" class="sound" aria-pressed="false" data-sound="sand"><span class="ico" aria-hidden="true">⏳</span>Kinetic sand</button>
     <button type="button" class="sound" aria-pressed="false" data-sound="tap"><span class="ico" aria-hidden="true">🥁</span>Soft tapping</button>
   </div>
+  <canvas id="play" class="play" role="img" aria-label="Play surface. Press and drag with a finger or mouse to squish, stretch or dig."></canvas>
+  <div class="row" style="margin-top:1rem"><button type="button" id="play-wiggle">Wiggle it</button><button type="button" id="play-reset">Smooth it out</button></div>
   <div style="margin-top:1.25rem;max-width:320px"><label for="volume">Volume</label><input type="range" id="volume" min="0" max="100" value="40"></div>
 </section>
 </main>
-<!-- <script type="module" src="js/relax.js"></script> -->
+<script src="js/relax.js" defer></script>
 </body>
 </html>

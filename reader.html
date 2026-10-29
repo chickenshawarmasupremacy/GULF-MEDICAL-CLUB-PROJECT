@@ -32,6 +32,7 @@
     <p style="margin:0">Or paste a screenshot onto this page.</p>
   </div>
   <img class="preview" id="image-preview" alt="Preview of your image" hidden>
+  <div style="max-width:260px;margin-top:1rem"><label for="lang-sel">Language of the text</label><select id="lang-sel"><option value="eng">English</option><option value="ara">Arabic</option><option value="eng+ara">English and Arabic</option></select></div>
   <button type="button" class="primary" id="extract-btn" style="margin-top:1rem">Read the text</button>
   <p id="status" role="status" aria-live="polite"></p>
 </section>
@@ -56,6 +57,6 @@
   </article>
 </section>
 </main>
-<!-- <script type="module" src="js/reader.js"></script> -->
+<script src="js/reader.js" defer></script>
 </body>
 </html>

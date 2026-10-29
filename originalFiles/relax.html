@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relax · Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html">Anchor</a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="reader.html">Reader</a></li>
+      <li><a href="relax.html" aria-current="page">Relax</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<h1>Calm down</h1>
+<p>Start with breathing, or go straight to a sound. Do either, or both.</p>
+<section class="panel" aria-labelledby="b-h">
+  <h2 id="b-h">Breathing</h2>
+  <div class="row" role="group" aria-label="Breathing pattern">
+    <button type="button" aria-pressed="true" data-pattern="478">4-7-8</button>
+    <button type="button" aria-pressed="false" data-pattern="box">Box (4-4-4-4)</button>
+    <button type="button" aria-pressed="false" data-pattern="slow">Slow (5-5)</button>
+  </div>
+  <div class="breath"><div class="orb" id="orb" role="img" aria-label="Breathing guide"><span id="breath-label">Ready</span></div></div>
+  <div class="row" style="justify-content:center">
+    <button type="button" class="primary" id="breath-start">Start</button>
+    <button type="button" id="breath-stop">Stop</button>
+    <label for="vibrate" style="display:inline;margin:0"><input type="checkbox" id="vibrate"> Gentle vibration</label>
+  </div>
+</section>
+<section class="panel" aria-labelledby="s-h" style="margin-top:var(--gap)">
+  <h2 id="s-h">Sounds</h2>
+  <div class="sound-grid">
+    <button type="button" class="sound" aria-pressed="false" data-sound="slime"><span class="ico" aria-hidden="true">🫧</span>Slime</button>
+    <button type="button" class="sound" aria-pressed="false" data-sound="putty"><span class="ico" aria-hidden="true">🫳</span>Putty</button>
+    <button type="button" class="sound" aria-pressed="false" data-sound="sand"><span class="ico" aria-hidden="true">⏳</span>Kinetic sand</button>
+    <button type="button" class="sound" aria-pressed="false" data-sound="tap"><span class="ico" aria-hidden="true">🥁</span>Soft tapping</button>
+  </div>
+  <div style="margin-top:1.25rem;max-width:320px"><label for="volume">Volume</label><input type="range" id="volume" min="0" max="100" value="40"></div>
+</section>
+</main>
+<!-- <script type="module" src="js/relax.js"></script> -->
+</body>
+</html>

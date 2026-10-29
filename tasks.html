@@ -36,13 +36,29 @@
       <li><input type="checkbox" id="s2" aria-labelledby="s2l"><span id="s2l">Example step: do the first small part</span><button type="button" aria-label="Remove step">✕</button></li>
     </ul>
     <button type="button" id="split-task" style="margin-top:1rem">Split a big task for me</button>
+    <p id="task-status" role="status" style="margin-top:.5rem"></p>
   </section>
   <section class="panel" aria-labelledby="tm-h">
     <h2 id="tm-h">Time for this step</h2>
-    <div class="timer" role="timer" aria-label="Time remaining">
-      <svg viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="90"/><circle class="fill" id="timer-ring" cx="100" cy="100" r="90"/></svg>
-      <span class="readout" id="timer-readout">10:00</span>
+    <fieldset class="styles"><legend>Timer look</legend>
+      <label><input type="radio" name="tstyle" value="ring" checked> Ring</label>
+      <label><input type="radio" name="tstyle" value="grow"> Growing circle</label>
+      <label><input type="radio" name="tstyle" value="glass"> Hourglass</label>
+    </fieldset>
+    <div class="timer">
+      <svg class="ring" data-visual="ring" viewBox="0 0 200 200" aria-hidden="true"><circle class="track" cx="100" cy="100" r="90"/><circle class="fill" id="timer-ring" cx="100" cy="100" r="90"/></svg>
+      <div class="grow-wrap" data-visual="grow" hidden aria-hidden="true"><div class="grow" id="grow-circle"></div></div>
+      <svg class="glass" data-visual="glass" viewBox="0 0 100 140" hidden aria-hidden="true">
+        <defs><clipPath id="clip-top"><rect id="glass-top-clip" x="0" y="10" width="100" height="60"/></clipPath><clipPath id="clip-bot"><rect id="glass-bot-clip" x="0" y="130" width="100" height="0"/></clipPath></defs>
+        <polygon points="15,10 85,10 52,70 48,70" fill="#d9b88f" clip-path="url(#clip-top)"/>
+        <polygon points="48,70 52,70 85,130 15,130" fill="#d9b88f" clip-path="url(#clip-bot)"/>
+        <line id="glass-stream" x1="50" y1="70" x2="50" y2="130" stroke="#d9b88f" stroke-width="1.5" opacity="0"/>
+        <path d="M12 8H88M12 132H88" stroke="#ebe6dd" stroke-width="4" stroke-linecap="round"/>
+        <path d="M15 10L48 70L15 130M85 10L52 70L85 130" fill="none" stroke="#ebe6dd" stroke-width="2.5" stroke-linejoin="round"/>
+      </svg>
     </div>
+    <div class="readout" id="timer-readout">10:00</div>
+    <p id="timer-phase" role="status" style="text-align:center;margin:0 auto"></p>
     <div class="row" style="margin-top:1rem;justify-content:center">
       <label for="minutes" class="sr-only">Minutes</label>
       <input type="number" id="minutes" value="10" min="1" max="120" style="width:6rem">
@@ -54,6 +70,6 @@
   </section>
 </div>
 </main>
-<!-- <script type="module" src="js/tasks.js"></script> -->
+<script src="js/tasks.js" defer></script>
 </body>
 </html>

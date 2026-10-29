@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader · Anchor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="index.html">Anchor</a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="tasks.html">Tasks</a></li>
+      <li><a href="cards.html">Cards</a></li>
+      <li><a href="reader.html" aria-current="page">Reader</a></li>
+      <li><a href="relax.html">Relax</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<h1>Make text easier to read</h1>
+<p>Add a photo or screenshot of text. We'll pull the words out and show them in a layout that's easier on the eyes.</p>
+<section class="panel" aria-labelledby="u-h">
+  <h2 id="u-h">1. Add your image</h2>
+  <div class="drop">
+    <label for="image-input">Choose a photo or screenshot</label>
+    <input type="file" id="image-input" accept="image/*" capture="environment">
+    <p style="margin:0">Or paste a screenshot onto this page.</p>
+  </div>
+  <img class="preview" id="image-preview" alt="Preview of your image" hidden>
+  <button type="button" class="primary" id="extract-btn" style="margin-top:1rem">Read the text</button>
+  <p id="status" role="status" aria-live="polite"></p>
+</section>
+<section class="panel" aria-labelledby="o-h" style="margin-top:var(--gap)">
+  <h2 id="o-h">2. Adjust how it looks</h2>
+  <div class="reader-controls">
+    <div><label for="font-sel">Font</label><select id="font-sel"><option>Lexend</option><option>Atkinson Hyperlegible</option><option>OpenDyslexic</option></select></div>
+    <div><label for="size-rng">Text size</label><input type="range" id="size-rng" min="16" max="40" value="22"></div>
+    <div><label for="space-rng">Letter spacing</label><input type="range" id="space-rng" min="0" max="20" value="6"></div>
+    <div><label for="line-rng">Line height</label><input type="range" id="line-rng" min="12" max="26" value="19"></div>
+    <div><label for="tint-sel">Background</label><select id="tint-sel"><option>Cream</option><option>Pale blue</option><option>Soft grey</option><option>Dark</option></select></div>
+  </div>
+</section>
+<section style="margin-top:var(--gap)" aria-labelledby="r-h">
+  <h2 id="r-h">3. Your text</h2>
+  <div class="row" style="margin-bottom:1rem">
+    <button type="button" id="read-aloud">Read aloud</button>
+    <button type="button" id="copy-text">Copy text</button>
+  </div>
+  <article class="reader-out" id="reader-out" tabindex="0" aria-live="polite">
+    <p style="color:inherit">Your text will appear here. Each paragraph is separated clearly and the words are spaced out so they're easier to follow.</p>
+  </article>
+</section>
+</main>
+<!-- <script type="module" src="js/reader.js"></script> -->
+</body>
+</html>
